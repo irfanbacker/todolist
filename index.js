@@ -26,10 +26,10 @@ app.post('/', urlencodedParser, function(req, res){
 });
 
 app.post('/del', urlencodedParser, function(req, res){
-    var dtasks = req.body.dtask;
+    var dtasks = req.body;
     for(var i=0;i<dtasks.length;i++)
-     {tasks.splice(task.indexOf(dtasks[i]), 1);}
-    res.json(tasks);
+     {tasks.splice(tasks.indexOf(dtasks[i]), 1);}
+    res.json(dtasks);
 });
 
 //-------------------------------------------------------------------------

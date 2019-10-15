@@ -28,7 +28,7 @@ $(document).ready(function(){
        url:'/del',
        data:{dtask:dtasks},
        success:function(data){
-         location.reload();
+        location.reload();
        }
      });
    });
