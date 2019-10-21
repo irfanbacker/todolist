@@ -26,10 +26,17 @@ app.post('/', urlencodedParser, function(req, res){
 });
 
 app.post('/del', urlencodedParser, function(req, res){
-    var dtasks = req.body;
-    for(var i=0;i<dtasks.length;i++)
-     {tasks.splice(tasks.indexOf(dtasks[i]), 1);}
-    res.json(dtasks);
+    var dtasks = req.body.check;
+    //var dtasks = ["Task2"]
+    console.log(dtasks);
+    //tasks.splice(tasks.indexOf(dtasks), 1);
+    var filtered = tasks.filter(function(value, index, arr){
+       if (value.item==dtasks) return 0;
+       else return 1;
+    });
+    tasks=filtered;
+    console.log(tasks);
+    res.redirect('/');
 });
 
 //-------------------------------------------------------------------------

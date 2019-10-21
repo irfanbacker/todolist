@@ -18,19 +18,23 @@ $(document).ready(function(){
 
   });
 
-  $('#rem').on('click', function(event) {
+
+
+  /*$('#rem').on('click', function(event) {
     event.preventDefault();
-    var dtasks = $("#todo input:checkbox:checked").map(function () {
-        return {item: $(this).val()};
-    }).get();
+    var rem = $("#todo input");
+    var dtask = {item: rem.val()};
+    alert(dtask);
     $.ajax({
        type:'POST',
        url:'/del',
-       data:{dtask:dtasks},
-       success:function(data){
-        location.reload();
-       }
+       //contentType: "application/json; charset=UTF-8",
+       //dataType: "json",
+       data: dtask,
+       //success:function(data){
+      //    location.reload();
+       //}
      });
    });
-
+*/
 });
